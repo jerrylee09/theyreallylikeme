@@ -1,0 +1,17 @@
+{
+  "name": "theyreallylikeme",
+  "version": "1.0.0",
+  "description": "WOO",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TEAM AWESOME",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.0"
+  }
+}
