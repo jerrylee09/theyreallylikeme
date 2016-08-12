@@ -3,10 +3,10 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 
-var drew = new TeamMember("Drew", "Hey this is my bio", "./assets/imgs/Drew Wiskus.jpg");
-var tyler = new TeamMember("Tyler", "Hey this TYLERSZ is my bio", "./assets/imgs/Tyler Rapson 2.jpg");
-var josh = new TeamMember("Josh", "Hey this JOSH is my bio", "./assets/imgs/Josh Gressman 2.jpg");
-var jerry = new TeamMember("Jerry", "Hey this JERRRY is my bio", "./assets/imgs/Jerry Lee 2.jpg");
+var drew = new TeamMember("DrewWiskus", "Hey this is my bio", "./assets/imgs/Drew Wiskus.jpg");
+var tyler = new TeamMember("TylerRapson", "Hey this TYLERSZ is my bio", "./assets/imgs/Tyler Rapson 2.jpg");
+var josh = new TeamMember("JoshGressman", "Hey this JOSH is my bio", "./assets/imgs/Josh Gressman 2.jpg");
+var jerry = new TeamMember("JerryLee", "Hey this JERRRY is my bio", "./assets/imgs/Jerry Lee 2.jpg");
 
 var team = [drew, tyler, josh, jerry];
 
