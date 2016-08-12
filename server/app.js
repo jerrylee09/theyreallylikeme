@@ -23,13 +23,34 @@ app.get('/likes', function(req, res) {
     res.send(team);
 });
 
+var likeUpdate = {
+    name: "Drew",
+    likes: 4
+};
 app.post('/likes', function(req, res) {
-    console.log('prereq:', team);
-    team = req.body;
-    console.log('postreq', team);
+    //res.head(201);
+    console.log("post /likes req", req.body);
+
+    incLikes(req.body);
+    res.send(likeUpdate);
+
 });
 
+function incLikes(personObject) {
+    console.log("works?");
+    console.log(personObject);
 
+    team.forEach(function(teamMember, i) {
+        if (personObject.name == teamMember.name) {
+            team[i].likes++;
+            console.log(team[i].likes);
+            likeUpdate.name = teamMember.name;
+            likeUpdate.likes = teamMember.likes;
+        }
+    });
+
+
+}
 app.get('/*', function(req, res) {
     var file = req.params[0] || '/view/index.html';
     res.sendFile(path.join(__dirname, './public', file));
