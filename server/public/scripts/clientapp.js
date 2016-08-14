@@ -9,8 +9,13 @@ $(document).ready(function() {
             name: memberid
         };
         postLikes(teamMember);
-        updateLikes();
+        updateLikes();    
+        $(this).toggleClass('rubberBand');
+        $(this).toggleClass('wobble');
+        $(this).next().find('span').toggleClass('fadeInUp');
+        $(this).next().find('span').toggleClass('fadeInDown');
 
+        console.log($(this).next().find('span'));
 
     });
 
@@ -22,7 +27,7 @@ $(document).ready(function() {
             success: function(team) {
 
                 team.forEach(function(person, i) {
-                    $("#container").append('<div class="teamMember col-md-3 col-sm-6 thumbnail fadeInDown animated"> <img src="' + person.img + '" class="img-responsive img-thumbnail" /><h3 class="text-center">' + person.name + '</h3><p class="text-center">' + person.bios + '</p><button id="' + person.name + '"' + 'class="btn btn-primary center-block"><span class=" glyphicon glyphicon-thumbs-up"></span></button><p class="center-text">Likes: <span id="' + person.name + 'likes" >' + person.likes + '</span></p></div>');
+                    $("#container").append('<div class="teamMember col-md-3 col-sm-6 thumbnail fadeInDown animated"> <img src="' + person.img + '" class="img-responsive img-thumbnail" /><h3 class="text-center">' + person.name + '</h3><p class="text-center">' + person.bios + '</p><button id="' + person.name + '"' + 'class="btn btn-primary center-block wobble animated"><span class=" glyphicon glyphicon-thumbs-up"></span></button><p class="center-text">Likes: <span id="' + person.name + 'likes" class="fadeInDown animated">' + person.likes + '</span></p></div>');
 
                 });
             },
